@@ -1,7 +1,8 @@
 const GROUP_NAME = 'orders';
-const Joi = require('joi');
+import Joi from 'joi';
+import { jwtHeaderDefine } from '../untils/router-helper';
 
-module.exports = [
+export default [
   {
     method: 'POST',
     path: `/${GROUP_NAME}`,
@@ -20,11 +21,9 @@ module.exports = [
                   }),
               ),
           },
-          headers: Joi.object({
-              authorization: Joi.string().required(),
-          }).unknown(),
+          ...jwtHeaderDefine,
         },
-      },
+    },
   },
   {
     method: 'POST',

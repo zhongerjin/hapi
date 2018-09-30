@@ -1,5 +1,5 @@
 const env2 = require('env2');
-if(process.env.NODE_ENV.trim() === 'production'){
+if(process.env.NODE_ENV === 'production'){
     env2('./.env.prod');
 }else{
     env2('./.env');

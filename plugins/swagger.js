@@ -1,9 +1,9 @@
-const inert = require("inert");
-const vision = require("vision");
-const package = require("package");
-const hapiSwagger = require("hapi-swagger");
+import inert from 'inert';
+import vision from 'vision';
+import packages from 'package';
+import hapiSwagger from 'hapi-swagger';
 
-module.exports = [
+export default [
     inert,
     vision,
     {
@@ -11,7 +11,7 @@ module.exports = [
         options: {
             info: {
                 title: '接口文档',
-                version: package.version,
+                version: packages.version,
             },
             grouping: "tags",
             tags: [
